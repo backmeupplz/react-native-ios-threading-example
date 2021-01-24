@@ -1,5 +1,5 @@
 import 'react-native-gesture-handler';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -19,6 +19,7 @@ import {
 import AsyncStorage from '@react-native-community/async-storage';
 import reactotron from 'reactotron-react-native';
 import {NavigationContainer} from '@react-navigation/native';
+import SplashScreen from 'react-native-splash-screen';
 
 reactotron
   .setAsyncStorageHandler(AsyncStorage)
@@ -33,6 +34,10 @@ reactotron.warn('Initialized');
 declare const global: {HermesInternal: null | {}};
 
 const App = () => {
+  useEffect(() => {
+    SplashScreen.hide();
+  });
+
   return (
     <NavigationContainer>
       <StatusBar barStyle="dark-content" />

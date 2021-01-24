@@ -13,6 +13,7 @@
 #import <FlipperKitReactPlugin/FlipperKitReactPlugin.h>
 
 #import "SyncWorkerBridgeDelegate.h"
+#import "RNSplashScreen.h"
 
 static void InitializeFlipper(UIApplication *application) {
   FlipperClient *client = [FlipperClient sharedClient];
@@ -54,6 +55,8 @@ static void InitializeFlipper(UIApplication *application) {
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  // Splash screen
+  [RNSplashScreen show];
   return YES;
 }
 
