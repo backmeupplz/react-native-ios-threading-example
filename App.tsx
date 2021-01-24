@@ -1,13 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
+import 'react-native-gesture-handler';
 import React from 'react';
 import {
   SafeAreaView,
@@ -27,6 +18,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import AsyncStorage from '@react-native-community/async-storage';
 import reactotron from 'reactotron-react-native';
+import {NavigationContainer} from '@react-navigation/native';
 
 reactotron
   .setAsyncStorageHandler(AsyncStorage)
@@ -36,13 +28,13 @@ reactotron
   .useReactNative()
   .connect();
 
-// reactotron.warn('Initialized');
+reactotron.warn('Initialized');
 
 declare const global: {HermesInternal: null | {}};
 
 const App = () => {
   return (
-    <>
+    <NavigationContainer>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <ScrollView
@@ -84,7 +76,7 @@ const App = () => {
           </View>
         </ScrollView>
       </SafeAreaView>
-    </>
+    </NavigationContainer>
   );
 };
 

@@ -28,7 +28,6 @@ static void InitializeFlipper(UIApplication *application) {
 @interface AppDelegate()
 
 @property (nonatomic, strong) RCTBridge *syncThreadBridge;
-@property (nonatomic, strong) RCTRootView *syncThreadRootView;
 
 @end
 
@@ -47,9 +46,6 @@ static void InitializeFlipper(UIApplication *application) {
   
   // Setup sync worker
   self.syncThreadBridge = [[RCTBridge alloc] initWithDelegate:[SyncWorkerBridgeDelegate new] launchOptions:nil];
-  self.syncThreadRootView = [[RCTRootView alloc] initWithBridge:self.syncThreadBridge
-                                                     moduleName:@"Sync"
-                                              initialProperties:nil];
 
   rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
 
